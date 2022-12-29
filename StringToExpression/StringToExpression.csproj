@@ -7,6 +7,8 @@
         <LangVersion>11</LangVersion>
         <Version>2.1.0</Version>
         <AssemblyName>StirlingLabs.StringToExpression</AssemblyName>
+        <PackageOutputPath Condition="'$(CI)'!=''">../artifacts</PackageOutputPath>
+        <GeneratePackageOnBuild Condition="'$(CI)'!=''">true</GeneratePackageOnBuild>
     </PropertyGroup>
 
     <ItemGroup>
