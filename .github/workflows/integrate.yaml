@@ -1,4 +1,5 @@
 name: Integration
+# Note requirements below.
 
 on:
   push:
@@ -20,4 +21,16 @@ jobs:
       needs.threshold.outputs.continue == 'true' && 
       needs.threshold.outputs.release != 'true'
     uses: StirlingLabs/Actions/.github/workflows/dotnetBuild.yaml@main
-  
+
+# Please note that this CI requires:
+#
+# - Use of https://github.com/StirlingLabs/Version.Net
+# - *.Test.csproj contains:
+#    <ItemGroup>
+#        <PackageReference Include="GitHubActionsTestLogger" Version="2.0.1" PrivateAssets="All" Condition="'$(CI)'!=''" />
+#    </ItemGroup>
+# - *.csproj contains:
+#    <PropertyGroup>
+#        <PackageOutputPath Condition="'$(CI)'!=''">../artifacts</PackageOutputPath>
+#        <GeneratePackageOnBuild Condition="'$(CI)'!=''">true</GeneratePackageOnBuild>
+#    </PropertyGroup>
