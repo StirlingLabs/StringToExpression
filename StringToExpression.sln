@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringToExpression", "StringToExpression\StringToExpression.csproj", "{9CE7422B-E2E7-46A3-A3B8-4322570E7E21}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringToExpression.Test", "StringToExpression.Test\StringToExpression.Test.csproj", "{4CA4470F-0283-455B-8262-E54093235A66}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9CE7422B-E2E7-46A3-A3B8-4322570E7E21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CE7422B-E2E7-46A3-A3B8-4322570E7E21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CE7422B-E2E7-46A3-A3B8-4322570E7E21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CE7422B-E2E7-46A3-A3B8-4322570E7E21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CA4470F-0283-455B-8262-E54093235A66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CA4470F-0283-455B-8262-E54093235A66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CA4470F-0283-455B-8262-E54093235A66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CA4470F-0283-455B-8262-E54093235A66}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
