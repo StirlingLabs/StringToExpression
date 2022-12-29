@@ -5,7 +5,6 @@
         <Nullable>enable</Nullable>
         <TargetFrameworks>net7.0;net6.0;netstandard2.1;netstandard2.0</TargetFrameworks>
         <LangVersion>11</LangVersion>
-        <Version>2.1.0</Version>
         <AssemblyName>StirlingLabs.StringToExpression</AssemblyName>
         <PackageOutputPath Condition="'$(CI)'!=''">../artifacts</PackageOutputPath>
         <GeneratePackageOnBuild Condition="'$(CI)'!=''">true</GeneratePackageOnBuild>
@@ -19,5 +18,9 @@
     <ItemGroup>
       <None Remove="**/*.DotSettings" />
     </ItemGroup>
+
+    <ImportGroup>
+        <Import Project="../Version.proj" />
+    </ImportGroup>
 
 </Project>

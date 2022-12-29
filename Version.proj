@@ -1,0 +1,28 @@
+<Project>
+    <PropertyGroup>
+        <Authors>The Stirling Labs Team</Authors>
+        <Owners>Stirling Labs</Owners>
+        <Company>Stirling Labs</Company>
+        <RepositoryType>git</RepositoryType>
+        <RepositoryUrl>https://github.com/StirlingLabs/StringToExpression.git</RepositoryUrl>
+        <PackageProjectUrl>https://github.com/StirlingLabs/StringToExpression</PackageProjectUrl>
+        <description>
+            StringToExpression allows you to create methods that take strings and outputs .NET expressions.
+            It is highly configurable allowing you to define your own language with your own syntax.
+        </description>
+        <GitDefaultBranch>main</GitDefaultBranch>
+        <GitCommitsIgnoreMerges>true</GitCommitsIgnoreMerges>
+        <VersionNetDebugImportance>low</VersionNetDebugImportance>
+        <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+        <PackageIcon>SL.png</PackageIcon>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+    </PropertyGroup>
+    <ImportGroup>
+        <Import Project="StirlingLabs.Version/Version.proj"/>
+    </ImportGroup>
+    <ItemGroup>
+        <None Include="$(MSBuildThisFileDirectory)LICENSE.txt" Pack="true" PackagePath="LICENSE.txt" Visible="false"/>
+        <None Include="$(MSBuildThisFileDirectory)SL.png" Pack="true" PackagePath="SL.png" Visible="false"/>
+        <None Include="$(MSBuildThisFileDirectory)README.md" Pack="true" PackagePath="README.md" Visible="false"/>
+    </ItemGroup>
+</Project>
