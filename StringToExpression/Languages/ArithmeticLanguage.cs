@@ -55,7 +55,7 @@ public class ArithmeticLanguage
         definitions.AddRange(TypeDefinitions());
         definitions.AddRange(functions = FunctionDefinitions());
         definitions.AddRange(BracketDefinitions(functions));
-        definitions.AddRange(ArithmaticOperatorDefinitions());
+        definitions.AddRange(ArithmeticOperatorDefinitions());
         definitions.AddRange(PropertyDefinitions());
         definitions.AddRange(WhitespaceDefinitions());
         return definitions;
@@ -83,7 +83,7 @@ public class ArithmeticLanguage
     /// Returns the definitions for arithmetic operators used within the language.
     /// </summary>
     /// <returns></returns>
-    protected virtual IEnumerable<GrammarDefinition> ArithmaticOperatorDefinitions()
+    protected virtual IEnumerable<GrammarDefinition> ArithmeticOperatorDefinitions()
         => new[]
         {
             new BinaryOperatorDefinition(
