@@ -9,7 +9,7 @@ This is a fork of [Alex Davies' StringToExpression](https://github.com/codecutou
 StringToExpression allows you to create methods that take strings and outputs .NET expressions. It is highly
 configurable allowing you to define your own language with your own syntax.
 
-Two languages are provided out of the box, an   and an .
+Available via NuGet as [`StirlingLabs.StringToExpression`](https://www.nuget.org/packages/StirlingLabs.StringToExpression).
 
 ## Arithmetic
 
