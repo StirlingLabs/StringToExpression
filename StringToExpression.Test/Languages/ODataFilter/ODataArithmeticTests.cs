@@ -14,7 +14,7 @@ public class ODataArithmeticTests
     [TestCase("((4 sub 2) mul 5) eq 10")]
     [TestCase("(2.5 mul 4) eq 10")]
     [TestCase("(2.5 mul 3) eq 7.5")]
-    [TestCase("(9m div 10) eq 0.9")]
+    [TestCase("(9m div 10m) eq 0.9m")]
     [TestCase("(22.5 div 9) eq 2.5")]
     [TestCase("(10 div 5 mul 2) eq 4")]
     public void When_arithmetic_should_evaluate(string query)

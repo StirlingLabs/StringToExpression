@@ -183,7 +183,7 @@ public class ODataFilterLanguage
             new OperandDefinition(
                 "DECIMAL",
                 @"\-?\d+\.\d+",
-                x => Expression.Constant(decimal.Parse(x))),
+                x => Expression.Constant(double.Parse(x))),
 
             new OperandDefinition(
                 "LONG",

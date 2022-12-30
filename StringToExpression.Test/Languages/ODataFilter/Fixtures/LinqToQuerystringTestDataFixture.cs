@@ -42,27 +42,27 @@ public class LinqToQuerystringTestDataFixture
 
         ConcreteCollection = new List<ConcreteClass>
         {
-            InstanceBuilders.BuildConcrete("Apple", 1, new(2002, 01, 01), true, 10000000000, 111.111, 111.111f, 0x00, 0.1m,
+            InstanceBuilders.BuildConcrete("Apple", 1, new(2002, 01, 01), true, 10000000000, 111.111, 111.111f, 0x00, 0.1d,
                 guidArray[0]),
-            InstanceBuilders.BuildConcrete("Apple", 2, new(2005, 01, 01), false, 30000000000, 333.333, 333.333f, 0x22, 0.3m,
+            InstanceBuilders.BuildConcrete("Apple", 2, new(2005, 01, 01), false, 30000000000, 333.333, 333.333f, 0x22, 0.3d,
                 guidArray[2]),
-            InstanceBuilders.BuildConcrete("Custard", 1, new(2003, 01, 01), true, 50000000000, 555.555, 555.555f, 0xDD, 0.5m,
+            InstanceBuilders.BuildConcrete("Custard", 1, new(2003, 01, 01), true, 50000000000, 555.555, 555.555f, 0xDD, 0.5d,
                 guidArray[4]),
-            InstanceBuilders.BuildConcrete("Custard", 2, new(2002, 01, 01), false, 30000000000, 333.333, 333.333f, 0x00, 0.3m,
+            InstanceBuilders.BuildConcrete("Custard", 2, new(2002, 01, 01), false, 30000000000, 333.333, 333.333f, 0x00, 0.3d,
                 guidArray[2]),
-            InstanceBuilders.BuildConcrete("Custard", 3, new(2002, 01, 01), true, 40000000000, 444.444, 444.444f, 0x22, 0.4m,
+            InstanceBuilders.BuildConcrete("Custard", 3, new(2002, 01, 01), true, 40000000000, 444.444, 444.444f, 0x22, 0.4d,
                 guidArray[3]),
-            InstanceBuilders.BuildConcrete("Banana", 3, new(2003, 01, 01), false, 10000000000, 111.111, 111.111f, 0x00, 0.1m,
+            InstanceBuilders.BuildConcrete("Banana", 3, new(2003, 01, 01), false, 10000000000, 111.111, 111.111f, 0x00, 0.1d,
                 guidArray[0]),
-            InstanceBuilders.BuildConcrete("Eggs", 1, new(2005, 01, 01), true, 40000000000, 444.444, 444.444f, 0xCC, 0.4m,
+            InstanceBuilders.BuildConcrete("Eggs", 1, new(2005, 01, 01), true, 40000000000, 444.444, 444.444f, 0xCC, 0.4d,
                 guidArray[3]),
-            InstanceBuilders.BuildConcrete("Eggs", 3, new(2001, 01, 01), false, 20000000000, 222.222, 222.222f, 0xCC, 0.2m,
+            InstanceBuilders.BuildConcrete("Eggs", 3, new(2001, 01, 01), false, 20000000000, 222.222, 222.222f, 0xCC, 0.2d,
                 guidArray[1]),
-            InstanceBuilders.BuildConcrete("Dogfood", 4, new(2003, 01, 01), true, 30000000000, 333.333, 333.333f, 0xEE, 0.3m,
+            InstanceBuilders.BuildConcrete("Dogfood", 4, new(2003, 01, 01), true, 30000000000, 333.333, 333.333f, 0xEE, 0.3d,
                 guidArray[2]),
-            InstanceBuilders.BuildConcrete("Dogfood", 4, new(2004, 01, 01), false, 10000000000, 111.111, 111.111f, 0xDD, 0.1m,
+            InstanceBuilders.BuildConcrete("Dogfood", 4, new(2004, 01, 01), false, 10000000000, 111.111, 111.111f, 0xDD, 0.1d,
                 guidArray[0]),
-            InstanceBuilders.BuildConcrete("Dogfood", 5, new(2001, 01, 01), true, 20000000000, 222.222, 222.222f, 0xCC, 0.2m,
+            InstanceBuilders.BuildConcrete("Dogfood", 5, new(2001, 01, 01), true, 20000000000, 222.222, 222.222f, 0xCC, 0.2d,
                 guidArray[1])
         }.AsQueryable();
 
@@ -113,7 +113,7 @@ public class LinqToQuerystringTestDataFixture
         public static EdgeCaseClass BuildEdgeCase(string name, int age, DateTime date, bool complete) => new() { Name = name, Date = date, Age = age, Complete = complete };
 
         public static ConcreteClass BuildConcrete(string name, int age, DateTime date, bool complete, long population, double value,
-            float cost, byte code, decimal score, Guid guid)
+            float cost, byte code, double score, Guid guid)
             => new() {
                 Name = name, Date = date, Age = age, Complete = complete, Population = population, Value = value, Cost = cost, Code = code,
                 Score = score, Guid = guid
@@ -159,7 +159,7 @@ public class LinqToQuerystringTestDataFixture
 
         public Guid Guid { get; set; }
 
-        public decimal Score { get; set; }
+        public double Score { get; set; }
 
         public Color Color { get; set; }
 
