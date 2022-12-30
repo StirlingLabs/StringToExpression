@@ -1,17 +1,19 @@
-# StringToExpression
+![StringToExpression](https://raw.githubusercontent.com/StirlingLabs/StringToExpression/main/StringToExpression.jpg)
+
+[![Integration](https://github.com/StirlingLabs/StringToExpression/actions/workflows/integrate.yaml/badge.svg)](https://github.com/StirlingLabs/StringToExpression/actions/workflows/integrate.yaml)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/8f83d54adab74d1ba646887cdfdf9b64)](https://www.codacy.com/gh/StirlingLabs/StringToExpression/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=StirlingLabs/StringToExpression&amp;utm_campaign=Badge_Grade)
+![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/StirlingLabs/StringToExpression?sort=semver)
 
 This is a fork of [Alex Davies' StringToExpression](https://github.com/codecutout/StringToExpression/) library.
 
 StringToExpression allows you to create methods that take strings and outputs .NET expressions. It is highly
 configurable allowing you to define your own language with your own syntax.
 
-Two languages are provided out of the box, an `ArithmeticLanguage` for performing algebra and an `ODataFilterLanguage`
-for parsing OData filter expressions.
+Two languages are provided out of the box, an   and an .
 
 ## Arithmetic
 
-A basic arithmetic language is provided. It can be used as is, or extended with customer function by
-extending `ArithmeticLanguage`
+A basic arithmetic language `ArithmeticLanguage` is provided for performing algebra. It can be used as is, or extended as desired.
 
 ```csharp
 var language = new ArithmeticLanguage();
@@ -23,9 +25,7 @@ Assert.Equal(13, function());
 
 ## OData filter
 
-[OData filtering](http://www.odata.org/documentation/odata-version-2-0/uri-conventions/#FilterSystemQueryOption) is a
-nice way to pass generic filtering requirements into a WebAPI, although parsing the the filter expression can be
-cumbersome. StringToExpression can be used as a lightweight parser
+`ODataFilterLanguage` is provided as a lightweight way to parse [OData filter expressions](http://www.odata.org/documentation/odata-version-2-0/uri-conventions/#FilterSystemQueryOption) which are a nice way to pass generic filtering requirements into a WebAPI.
 
 ```csharp
 public async Task<IHttpActionResult> GetDoohickies([FromUri(Name = "$filter")] string filter = "name eq 'discount' and rating gt 18")
