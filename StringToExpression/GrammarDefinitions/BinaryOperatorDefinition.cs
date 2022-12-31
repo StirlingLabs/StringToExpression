@@ -19,10 +19,12 @@ public class BinaryOperatorDefinition : OperatorDefinition
     /// <param name="regex">The regex to match tokens.</param>
     /// <param name="orderOfPrecedence">The relative order this operator should be applied. Lower orders are applied first.</param>
     /// <param name="expressionBuilder">The function given the single operand expressions, outputs a new operand.</param>
+    /// <param name="implicitTypeConversion">Whether or not to attempt to implicitly convert to the same type.</param>
     public BinaryOperatorDefinition(string name,
         [RegexPattern] string regex,
         int orderOfPrecedence,
-        Func<Expression, Expression, Expression> expressionBuilder)
+        Func<Expression, Expression, Expression> expressionBuilder,
+        bool implicitTypeConversion = true)
         : base(
             name,
             regex,
@@ -31,7 +33,8 @@ public class BinaryOperatorDefinition : OperatorDefinition
             param => {
                 var left = param[0];
                 var right = param[1];
-                ExpressionConversions.TryImplicitlyConvert(ref left, ref right);
+                if (implicitTypeConversion)
+                    ExpressionConversions.TryImplicitlyConvert(ref left, ref right);
                 return expressionBuilder(left, right);
             }) { }
 
