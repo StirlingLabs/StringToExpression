@@ -9,49 +9,50 @@ namespace StringToExpression;
 /// </summary>
 /// <typeparam name="T"></typeparam>
 [PublicAPI]
-public static class ReflectionUtil<T>
-{
-    /// <summary>
-    /// Find a MemberInfo based on an expression.
-    /// </summary>
-    /// <typeparam name="TOut"></typeparam>
-    /// <param name="memberSelector">expression selecting a member.</param>
-    /// <returns>Member selected by the expression.</returns>
-    public static MemberInfo Member<TOut>(Expression<Func<T, TOut>> memberSelector)
-    {
-        if (memberSelector == null)
-            throw new ArgumentNullException(nameof(memberSelector));
+public static class ReflectionUtil<T> {
 
-        var exp = memberSelector.Body;
+  /// <summary>
+  /// Find a MemberInfo based on an expression.
+  /// </summary>
+  /// <typeparam name="TOut"></typeparam>
+  /// <param name="memberSelector">expression selecting a member.</param>
+  /// <returns>Member selected by the expression.</returns>
+  public static MemberInfo Member<TOut>(Expression<Func<T, TOut>> memberSelector) {
+    if (memberSelector == null)
+      throw new ArgumentNullException(nameof(memberSelector));
 
-        //loop through to get rid of converts
-        while (exp is UnaryExpression expression)
-            exp = expression.Operand;
+    var exp = memberSelector.Body;
 
-        if (exp is not MemberExpression memberExpression)
-            throw new ArgumentException($"{nameof(memberSelector)} is a not a valid member");
-        return memberExpression.Member;
-    }
+    //loop through to get rid of converts
+    while (exp is UnaryExpression expression)
+      exp = expression.Operand;
 
-    /// <summary>
-    /// Finds a MethodInfo based on an expression.
-    /// </summary>
-    /// <typeparam name="TOut"></typeparam>
-    /// <param name="methodSelector">expression selecting a method.</param>
-    /// <returns>Method selected by the expression.</returns>
-    public static MethodInfo Method<TOut>(Expression<Func<T, TOut>> methodSelector)
-    {
-        if (methodSelector == null)
-            throw new ArgumentNullException(nameof(methodSelector));
+    if (exp is not MemberExpression memberExpression)
+      throw new ArgumentException($"{nameof(memberSelector)} is a not a valid member");
 
-        var exp = methodSelector.Body;
+    return memberExpression.Member;
+  }
 
-        //loop through to get rid of converts
-        while (exp is UnaryExpression expression)
-            exp = expression.Operand;
+  /// <summary>
+  /// Finds a MethodInfo based on an expression.
+  /// </summary>
+  /// <typeparam name="TOut"></typeparam>
+  /// <param name="methodSelector">expression selecting a method.</param>
+  /// <returns>Method selected by the expression.</returns>
+  public static MethodInfo Method<TOut>(Expression<Func<T, TOut>> methodSelector) {
+    if (methodSelector == null)
+      throw new ArgumentNullException(nameof(methodSelector));
 
-        if (exp is not MethodCallExpression methodExpression)
-            throw new ArgumentException($"{nameof(methodSelector)} is a not a valid method");
-        return methodExpression.Method;
-    }
+    var exp = methodSelector.Body;
+
+    //loop through to get rid of converts
+    while (exp is UnaryExpression expression)
+      exp = expression.Operand;
+
+    if (exp is not MethodCallExpression methodExpression)
+      throw new ArgumentException($"{nameof(methodSelector)} is a not a valid method");
+
+    return methodExpression.Method;
+  }
+
 }
