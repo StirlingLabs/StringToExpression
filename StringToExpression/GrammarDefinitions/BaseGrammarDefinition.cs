@@ -55,23 +55,49 @@ public abstract class BaseGrammarDefinition : IEquatable<BaseGrammarDefinition> 
   public virtual void Apply(Token token, ParseState state) {
   }
 
+  /// <summary>
+  /// Determines whether the specified base grammar definition is equal to the current object
+  /// </summary>
+  /// <param name="other">The BaseGrammarDefinition to compare with the current object.</param>
+  /// <returns>True if the specified object is equal to the current object; otherwise, false.</returns>
   public bool Equals(BaseGrammarDefinition? other)
     => !ReferenceEquals(null, other)
       && (ReferenceEquals(this, other)
         || Name == other.Name);
 
+  /// <summary>
+  /// Determines whether the specified object is equal to the current object
+  /// </summary>
+  /// <param name="obj">The object to compare with the current object.</param>
+  /// <returns>True if the specified object is equal to the current object; otherwise, false.</returns>
   public override bool Equals(object? obj)
     => !ReferenceEquals(null, obj)
       && (ReferenceEquals(this, obj)
         || obj.GetType() == GetType()
         && Equals((BaseGrammarDefinition)obj));
 
+  /// <summary>
+  /// Serves as the default hash function
+  /// </summary>
+  /// <returns>A hash code for the current object</returns>
   public override int GetHashCode()
     => Name.GetHashCode();
 
+  /// <summary>
+  /// Equality operator
+  /// </summary>
+  /// <param name="left">The left side of the operator</param>
+  /// <param name="right">The right side of the operator</param>
+  /// <returns>True if the objects are equal, false otherwise</returns>
   public static bool operator ==(BaseGrammarDefinition? left, BaseGrammarDefinition? right)
     => Equals(left, right);
 
+  /// <summary>
+  /// Inequality operator
+  /// </summary>
+  /// <param name="left">The left side of the operator</param>
+  /// <param name="right">The right side of the operator</param>
+  /// <returns>True if the objects are not equal, false otherwise</returns>
   public static bool operator !=(BaseGrammarDefinition? left, BaseGrammarDefinition? right)
     => !Equals(left, right);
 

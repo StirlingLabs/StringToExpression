@@ -1,6 +1,6 @@
 <Project>
     <PropertyGroup>
-        <Authors>The Stirling Labs Team</Authors>
+        <Authors>Alex Davies and The Stirling Labs Team</Authors>
         <Owners>Stirling Labs</Owners>
         <Company>Stirling Labs</Company>
         <RepositoryType>git</RepositoryType>
@@ -10,6 +10,7 @@
             StringToExpression allows you to create methods that take strings and outputs .NET expressions.
             It is highly configurable allowing you to define your own language with your own syntax.
         </description>
+        <tags>language parser dotnet filter tokenizer grammar expression expressions domain-specific-language odata dsl sl StirlingLabs csharp</tags>
         <GitDefaultBranch>main</GitDefaultBranch>
         <GitCommitsIgnoreMerges>true</GitCommitsIgnoreMerges>
         <VersionNetDebugImportance>low</VersionNetDebugImportance>

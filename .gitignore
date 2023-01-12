@@ -6,3 +6,4 @@ riderModule.iml
 *.user
 FodyWeavers.xsd
 *.ExternalAnnotations.xml
+.DS_Store

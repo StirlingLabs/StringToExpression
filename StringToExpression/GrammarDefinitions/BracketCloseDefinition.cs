@@ -69,6 +69,15 @@ public sealed class BracketCloseDefinition : BaseGrammarDefinition {
     throw new BracketUnmatchedException(token.SourceMap);
   }
 
+  /// <summary>
+  /// Executes a operator on the stack of operands.
+  /// </summary>
+  /// <param name="token">The current token that is being parsed.</param>
+  /// <param name="state">The current state of the parse</param>
+  /// <param name="bracketOperands">A stack of operands that are between a open and close bracket</param>
+  /// <param name="previousSeparator">the location of the previous list delimiter</param>
+  /// <param name="hasSeparators">Indicates whether the current list of operands has a list delimiter</param>
+  /// <returns>True if the operator was executed, false otherwise</returns>
   private bool PerOperator(Token token, ParseState state, Stack<Operand> bracketOperands, ref Substring previousSeparator, ref bool hasSeparators) {
     var currentOperator = state.Operators.Pop();
     if (BracketOpenDefinitions.Contains(currentOperator.Definition)) {
