@@ -799,5 +799,17 @@ public readonly struct Substring
 #endif
     return hc.ToHashCode();
   }
+  
+  /// <summary>
+  /// Creates a new readonly span over the portion of the target string.
+  /// </summary>
+  public ReadOnlySpan<char> AsSpan()
+    => Source.AsSpan(Start, Length);
+
+  /// <summary>
+  /// Creates a new readonly span over the portion of the target string.
+  /// </summary>
+  public ReadOnlySpan<char> AsSpan(int start, int length)
+    => Source.AsSpan(Start + start, length);
 
 }
