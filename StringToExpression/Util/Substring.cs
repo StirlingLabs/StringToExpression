@@ -240,7 +240,7 @@ public readonly struct Substring
         ? 0
         : -1;
 
-  /// <inheritdoc cref="IEquatable{T}.Equals(T?)"/>
+  /// <inheritdoc cref="IEquatable{T}.Equals(T)"/>
   public bool Equals(string? other)
     => CompareTo(other) == 0;
 
@@ -262,7 +262,7 @@ public readonly struct Substring
             other.Source, other.Start,
             Math.Max(Length, other.Length));
 
-  /// <inheritdoc cref="IEquatable{T}.Equals(T?)"/>
+  /// <inheritdoc cref="IEquatable{T}.Equals(T)"/>
   public bool Equals(Substring other)
     => CompareTo(other) == 0;
 
@@ -333,7 +333,7 @@ public readonly struct Substring
   /// <param name="start">The relative starting character position of a substring.</param>
   /// <param name="length">The number of characters in the substring.</param>
   /// <returns>
-  /// A substring that is <see cref="length"/> characters that begins at
+  /// A substring that is <paramref name="length"/> characters that begins at
   /// <paramref name="start"/> characters into this substring.
   /// </returns>
   /// <exception cref="ArgumentOutOfRangeException">Start and/or length are out of range.</exception>

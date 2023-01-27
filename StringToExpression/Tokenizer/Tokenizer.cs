@@ -19,6 +19,9 @@ public class Tokenizer {
   /// </summary>
   protected readonly Regex TokenRegex;
 
+  /// <summary>
+  /// Returns the Regex used to identify tokens.
+  /// </summary>
   [RegexPattern]
   public string RegexPattern { get; }
 
