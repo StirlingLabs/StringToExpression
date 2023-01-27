@@ -42,11 +42,10 @@ public static class LightExpressionConversion {
   }
 
   /// <summary>
-  /// Converts an IEnumerable of System.Linq.Expressions.ParameterExpression to an IEnumerable of 
-  /// FastExpressionCompiler.LightExpression.ParameterExpression.
+  /// Converts <see cref="System.Linq.Expressions.ParameterExpression"/>s to <see cref="FastExpressionCompiler.LightExpression.ParameterExpression"/>s.
   /// </summary>
-  /// <param name="expressions">The IEnumerable of System.Linq.Expressions.ParameterExpression to convert.</param>
-  /// <returns>The IEnumerable of converted FastExpressionCompiler.LightExpression.ParameterExpression.</returns>
+  /// <param name="expressions">The <see cref="System.Linq.Expressions.ParameterExpression"/>s to convert.</param>
+  /// <returns>The converted <see cref="FastExpressionCompiler.LightExpression.ParameterExpression"/>s.</returns>
   public static IEnumerable<Light.ParameterExpression> ToLightExpressions(this IEnumerable<Sys.ParameterExpression> expressions) {
     foreach (var expr in expressions)
       yield return expr.ToLightExpression();
