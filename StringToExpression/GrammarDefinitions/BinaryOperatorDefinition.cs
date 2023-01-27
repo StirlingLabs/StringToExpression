@@ -17,7 +17,6 @@ public sealed class BinaryOperatorDefinition : BaseOperatorDefinition {
   /// <param name="regex">The regex to match tokens.</param>
   /// <param name="orderOfPrecedence">The relative order this operator should be applied. Lower orders are applied first.</param>
   /// <param name="expressionBuilder">The function given the single operand expressions, outputs a new operand.</param>
-  /// <param name="implicitTypeConversion">Whether or not to attempt to implicitly convert to the same type.</param>
   public BinaryOperatorDefinition(string name,
     [RegexPattern] string regex,
     int orderOfPrecedence,

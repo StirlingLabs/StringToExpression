@@ -68,11 +68,15 @@ public class ExpressionEvaluator : ExpressionVisitor {
     return evaluator.CanEvaluateLocally;
   }
 
+  /// <summary>
+  /// A property indicating whether the expression can be evaluated locally or not
+  /// </summary>
   public bool CanEvaluateLocally { get; private set; } = true;
 
   private ExpressionEvaluator() {
   }
 
+  /// <inheritdoc />
   public override Expression? Visit(Expression? node) {
     if (node is null) throw new ArgumentNullException(nameof(node));
 

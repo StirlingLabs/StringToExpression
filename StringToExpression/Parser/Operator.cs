@@ -34,6 +34,10 @@ public class Operator {
     Definition = definition;
   }
 
+  /// <summary>
+  /// Returns a string that represents the current Operator.
+  /// </summary>
+  /// <returns>String representation of the Operator</returns>
   public override string ToString()
     => SourceMap.ToString();
 

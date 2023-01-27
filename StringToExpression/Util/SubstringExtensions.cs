@@ -14,6 +14,7 @@ public static class SubstringExtensions {
   /// The substring starts at a specified character position and has the remaining length.
   /// </summary>
   /// <param name="start">The relative starting character position of a substring.</param>
+  /// <param name="s">The current <see cref="StringToExpression.Substring"/> instance.</param>
   /// <returns>
   /// A substring that is the remaining characters after
   /// <paramref name="start"/> characters into this substring.
@@ -28,10 +29,11 @@ public static class SubstringExtensions {
   /// Retrieves a substring from this substring.
   /// The substring starts at a specified character position and has a specified length.
   /// </summary>
+  /// <param name="s">The current <see cref="StringToExpression.Substring"/> instance.</param>
   /// <param name="start">The relative starting character position of a substring.</param>
   /// <param name="length">The number of characters in the substring.</param>
   /// <returns>
-  /// A substring that is <see cref="length"/> characters that begins at
+  /// A substring that is <paramref name="length"/> characters that begins at
   /// <paramref name="start"/> characters into this substring.
   /// </returns>
   /// <exception cref="ArgumentOutOfRangeException">Start and/or length are out of range.</exception>
