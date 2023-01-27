@@ -8,9 +8,8 @@ using Light = FastExpressionCompiler.LightExpression;
 namespace StringToExpression;
 
 /// <summary>
-/// This class provides extension methods for converting a System.Linq.Expressions.LambdaExpression 
-/// to a FastExpressionCompiler.LightExpression.LambdaExpression and for converting other types of 
-/// System.Linq.Expressions to their corresponding FastExpressionCompiler.LightExpression counterparts.
+/// This class provides extension methods for converting <see cref="System.Linq.Expression"/>s
+/// to their <see cref="FastExpressionCompiler.LightExpression"/> counterparts.
 /// </summary>
 [PublicAPI]
 public static class LightExpressionConversion {
